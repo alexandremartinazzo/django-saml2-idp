@@ -1,0 +1,15 @@
+<h1>SAML2 Identity Provider</h1>
+
+<form action="http://localhost:9000/endpoint/" method="post">
+    {% csrf_token %}
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name"">
+    <input type="submit" value="OK">
+</form>
+
+<div>
+    <h2>Known service providers</h2>
+    {% for sp_id in known_sp_ids %}
+        <p>{{ sp_id }}</p>
+    {% endfor %}
+</div>
